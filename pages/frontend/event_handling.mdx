@@ -1,1 +1,46 @@
+# Event Handling in Qoarks
+
+
+In addition to its powerful components, Qoarks provides robust event handling capabilities, allowing you to react to changes in the user's authentication state directly within your application. This feature gives you the flexibility to create highly dynamic and responsive user experiences.
+
+
+## Listening to Authentication State Changes
+One of the most important events you can listen for is the AUTH_STATE_CHANGE event, which triggers whenever the user's authentication state changes (e.g., logging in, logging out, or registering). Here's how you can set up an event listener to respond to these changes:
+
+```javascript copy
+const el = document.querySelector('qoarks-auth');
+
+el.addEventListener('AUTH_STATE_CHANGE', (event) => {
+  console.log('Auth state changed:', event.detail);
+  // Add your custom logic here
+});
+
+```
+
+
+
+## How It Works
+- **Event Source**:
+        - The event is emitted by the `<qoarks-auth>` component. You can attach an event listener to this component to monitor changes.
+
+- **Event Type**:
+        - AUTH_STATE_CHANGE is the event type you listen for. It signals a change in the user's authentication state.
+
+- **Event Details**:
+        - The event’s detail property contains relevant information about the state change. You can use this data to update your application’s UI, trigger additional logic, or even redirect users based on their authentication status.
+
+
+
+## Practical Applications
+Using the **AUTH_STATE_CHANGE** event, you can:
+
+- **Update UI Elements**: Automatically show or hide parts of your UI based on whether a user is logged in or out.
+- **Trigger Notifications**: Send a welcome message or other notifications when a user successfully logs in.
+- **Custom Redirects**: Redirect users to different parts of your application depending on their authentication state (e.g., redirecting to a dashboard after login).
+
+
+
+# Conclusion
+Event handling in Qoarks adds a layer of interactivity and control that enhances the overall user experience. By listening to events like **AUTH_STATE_CHANGE**, you can ensure that your application responds dynamically to user actions, making it both user-friendly and responsive. As you continue to integrate Qoarks into your app, these event handling capabilities will allow you to build more sophisticated, tailored user experiences.
+
 

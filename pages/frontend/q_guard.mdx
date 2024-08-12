@@ -1,0 +1,51 @@
+
+# qoarks-guard Component
+
+The `<qoarks-guard>` component is designed to manage content visibility based on the user’s authentication status. It provides two subcomponents, `<qoarks-in>` and `<qoarks-not>`, which allow you to easily control what content is shown to authenticated or non-authenticated users.
+
+
+
+
+## Subcomponents
+
+- `<qoarks-in>`: 
+    - Purpose: Restrict content visibility to authenticated users. Anything placed within `<qoarks-in>` will only be visible if the user is logged in.
+
+    - Example
+    ```html copy
+    <qoarks-in>
+        <button>Logout</button>
+    </qoarks-in>
+    ```
+    In this example, the "Logout" button will only be displayed to users who are authenticated.
+
+<br />
+
+- `<qoarks-not>`: 
+    - Purpose: Display content only to non-authenticated users. Anything inside `<qoarks-not>` will be visible only if the user is not logged in.
+
+    - Example
+    ```html copy
+    <qoarks-not>
+        <button>Login</button>
+        <button>Register</button>
+    </qoarks-not>
+    ```
+    Here, the "Login" and "Register" buttons will be shown only to users who are not authenticated.
+
+
+
+
+<br />
+
+## Usage Scenarios
+A common use case for these components is to create a dynamic interface where the login and registration options are presented to non-authenticated users, and options like logout are available to authenticated users. This makes `<qoarks-in>` and `<qoarks-not>` particularly useful for creating responsive and secure user interfaces.
+
+## Flexibility and Modularity
+The `<qoarks-guard>` component is highly modular and can be adapted to a wide range of scenarios beyond simple login/logout displays. For example, you can use these components to control access to specific features, sections of your app, or even display different navigation menus based on whether a user is logged in.
+
+
+<br />
+
+# Conclusion
+The `<qoarks-guard>` component, with its `<qoarks-in>` and `<qoarks-not>` subcomponents, provides a powerful and straightforward way to manage content visibility based on user authentication status. This level of control is essential for building secure, user-friendly applications that adapt to the needs of both authenticated and non-authenticated users.

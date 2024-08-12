@@ -1,8 +1,9 @@
 {
 	"installation_and_setup": "Installation and Setup",
-	"customization_options": "Customization Options",
+	"q_auth": "<qoarks-auth />",
+	"q_action": "<qoarks-action />",
+	"q_guard": "<qoarks_guard />",
 	"event_handling": "Event Handling",
-	"integration_example": "Integration Example",
 	"react": "React",
 	"vue": "Vue",
 	"angular": "Angular"

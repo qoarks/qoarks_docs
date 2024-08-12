@@ -1,0 +1,41 @@
+
+# qoarks-action Component
+
+The `<qoarks-action>` component is a crucial tool for developers who opt for manual control over the authentication flow in the `<qoarks-auth>` component. This component allows you to trigger specific authentication-related actions like login, registration, and logout directly from your application’s interface.
+
+
+
+## Usage Example
+
+Here’s a simple example of how to use the `<qoarks-action>` component:
+```html copy
+<qoarks-action action="logout">
+  <button>Logout</button>
+</qoarks-action>
+```
+
+In this example, a logout button is placed within the `<qoarks-action>` component. When the button is clicked, the logout action is triggered, which clears and cleans all local user data, effectively logging the user out.
+
+
+<br />
+<br />
+
+# Parameters
+
+The `<qoarks-action>` component utilizes the following parameter:
+
+#### `action` (string):
+    - This mandatory parameter defines the action that the component will trigger. The current options include:
+        - `login`: Displays the Login modal, allowing users to sign in.
+        - `register`: Opens the Register modal, where users can create a new account.
+        - `logout`: Clears and cleans all local user data, effectively logging the user out of the application.
+
+    - Future Enhancements: More actions will be added in future versions, expanding the functionality of this component.
+
+
+#### Flexibility of `<qoarks-action>`
+You can pass any HTML or component inside `<qoarks-action>`, providing a flexible way to incorporate authentication controls directly into your application’s UI. Whether it's a button, a link, or a custom component, `<qoarks-action>` allows you to seamlessly integrate authentication triggers without needing to write custom logic for each case.
+
+# Conclusion
+The `<qoarks-action>` component is an essential tool for developers seeking more control over the user authentication process. By encapsulating authentication actions within a simple and flexible component, Qoarks makes it easy to manage login, registration, and logout functionalities directly within your app’s interface. This component is especially powerful when used in conjunction with manual mode in `<qoarks-auth>`, providing the flexibility to tailor the user experience to your exact needs.
+
