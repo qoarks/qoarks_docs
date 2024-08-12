@@ -1,0 +1,23 @@
+{
+	"index": "Introduction",
+	"getting_started": "Getting Started",
+	"core_concepts": "Core Concepts",
+	"_": {
+		"type": "separator",
+		"title": "Dashboard"
+	},
+	"dashboard": "Dashboard dive in",
+	"__": {
+		"type": "separator",
+		"title": "Integration"
+	},
+	"frontend": "Frontend integration",
+	"backend": "Backend integration",
+	"___": {
+		"type": "separator",
+		"title": "Support"
+	},
+	"faq": "FAQ",
+	"support": "Support",
+	"release": "Release Notes"
+}
