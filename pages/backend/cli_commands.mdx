@@ -1,4 +1,67 @@
-import WorkInProgress from "../../components/wip.tsx"
+# Running the qoarks_cli Command
 
 
-<WorkInProgress />
+The `qoarks_cli` tool is a powerful command-line application designed to serve as a reverse proxy, ensuring that your backend is both secure and compliant with the authentication and authorization rules you’ve set up in your Qoarks application. Running the CLI is straightforward, requiring just a few parameters to get started.
+
+
+
+## Basic Command Structure
+
+To run qoarks_cli, use the following command structure:
+```bash copy 
+qoarks_cli --port=8083 --config="./config.json"
+```
+
+This command starts the CLI tool on a specified port and configures it using the provided configuration file.
+
+
+
+## Parameters
+
+The `<qoarks-action>` component utilizes the following parameter:
+
+#### `--port` (string):
+    - The port parameter specifies the port number on which the CLI tool will listen for incoming requests.
+    - **Example**: **--port=8083** tells the CLI to listen on port 8083.
+
+#### `--config` (path):
+    - The config parameter points to a JSON configuration file that contains crucial settings needed for the CLI to operate correctly.
+    - **Example**: **--config="./config.json"** directs the CLI to use the settings defined in the config.json file located in the current directory.
+
+
+
+## Configuration File Details
+The configuration file is where you define key parameters that the qoarks_cli needs to function. Below is an example of what a typical config.json file might look like:
+
+```json copy
+{
+	"flow_token": "YOUR_FLOW_TOKEN_KEY_HERE",
+	"publicKey": "YOUR_PUBLIC_KEY_HERE",
+	"privateKey": "YOUR_PRIVATE_KEY_HERE",
+	"servers": ["http://localhost:4000", "http://localhost:8081"]
+}
+```
+
+## Configuration Parameters
+- `flow_token`:
+    - This is the authentication flow token associated with the specific flow you want to use. The flow token is essential for the CLI to correctly enforce the rules and configurations you've set up in the Qoarks dashboard.
+
+- `publicKey` and `privateKey`:
+    - These keys are used to securely communicate with Qoarks servers. The publicKey is used for verifying signatures, while the privateKey is used to sign requests. These keys ensure that the data exchanged between your application and Qoarks is both authentic and secure.
+
+- `servers`:
+    - This is a list of backend server endpoints that the qoarks_cli will act on. The CLI tool will proxy requests to these servers, applying the necessary authentication and authorization checks.
+
+<br />
+***More parameters will be introduced in the upcoming version***
+<br />
+
+## Best Practices
+- **Directory Setup**: It’s recommended to run qoarks_cli from the directory where your backend application code resides. This setup simplifies management and ensures that the CLI has easy access to your backend services.
+
+- **Secure Your Config File**: The configuration file contains sensitive information like your private key. Make sure to secure this file and restrict access to it only to trusted users and systems.
+
+
+<br />
+# Conclusion
+The qoarks_cli is an essential tool for developers who want to add an extra layer of security to their backend services without the hassle of writing complex authentication and authorization logic. By simply configuring and running the CLI with a few parameters, you can deploy a secure reverse proxy that handles all the hard work for you. Whether you’re running on a local server or deploying in a production environment, qoarks_cli ensures that your backend is protected and compliant with the roles and permissions you’ve set in the Qoarks dashboard.

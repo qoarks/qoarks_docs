@@ -139,7 +139,7 @@ const config: DocsThemeConfig = {
 	//   link: 'https://discord.com',
 	// },
 	docsRepositoryBase: "https://github.com/qoarks/qoarks_cli_releases",
-	darkMode: false,
+	darkMode: true,
 	primaryHue: 248,
 	primarySaturation: 150,
 	head: (
@@ -147,6 +147,21 @@ const config: DocsThemeConfig = {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta property="og:title" content="Qoarks documentation" />
 			<meta property="og:description" content="Qoarks documentation" />
+
+			<link rel="icon" type="image/x-icon" href="/logo.svg"></link>
+			<link rel="icon" href="/logo.svg" type="image/svg+xml" />
+			<link
+				rel="icon"
+				href="/logo.svg"
+				type="image/svg+xml"
+				media="(prefers-color-scheme: dark)"
+			/>
+			<link
+				rel="icon"
+				href="/logo.svg"
+				type="image/png"
+				media="(prefers-color-scheme: dark)"
+			/>
 		</>
 	),
 	banner: {
@@ -177,7 +192,7 @@ const config: DocsThemeConfig = {
 			return <>{title}</>;
 		},
 	},
-	faviconGlyph: "📚",
+	// faviconGlyph: "📚",
 	footer: {
 		text: (
 			<div>

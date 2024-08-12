@@ -1,4 +1,80 @@
-import WorkInProgress from "../../components/wip.tsx"
+import { Steps } from "nextra/components";
 
+# Introduction to `qoarks_cli`
 
-<WorkInProgress />
+The `qoarks_cli` is a command-line interface (CLI) tool designed to act as a reverse proxy, providing robust protection for your server while seamlessly handling authentication and authorization. With `qoarks_cli`, you no longer need to write custom logic to secure your backend—simply deploy the tool, and it will manage everything for you.
+
+The power of `qoarks_cli` lies in its ability to enforce the roles and permissions defined within your Qoarks application. By leveraging these predefined rules, the CLI ensures that only authorized users can access specific resources or perform certain actions, making your backend both secure and easy to manage.
+
+## Installation
+
+Setting up `qoarks_cli` is straightforward, with options available for Windows, macOS, and Linux. Below are the steps to get you started on each platform:
+
+### Windows
+
+<Steps>
+### 1. Download the ZIP File: <></>
+    - Head over to the [releases
+	page](https://github.com/qoarks/qoarks_cli_releases/releases). and download
+	the latest .zip file for Windows.<></>
+
+### 2. Unzip and Run:
+
+    - Extract the contents of the ZIP file.<></>
+    - Run the executable file, `qoarks_cli....exe`, to start the CLI.<></>
+
+</Steps>
+
+### macOS and Linux
+
+<Steps>
+### 1. Download the TAR.GZ File:
+    - Visit the [releases page](https://github.com/qoarks/qoarks_cli_releases/releases) and download the appropriate .tar.gz file for your operating system.
+
+### 2. Extract and Run:
+
+    - Extract the TAR.GZ file.
+    - Navigate to the extracted directory and run the CLI using the command ./qoarks_cli....
+
+</Steps>
+
+## Installing qoarks_cli with Homebrew
+
+### Prerequisites
+
+Ensure that [Homebrew](https://brew.sh/) is installed on your system before proceeding with the installation.
+
+### Installation Steps
+
+<Steps>
+### 1. Tap the qoarks/qoarks_cli Repository:
+    - First, tap into the qoarks CLI formula repository by running the following command:
+    ```bash copy
+    brew tap qoarks/qoarks_cli
+   ```
+   
+### 2. Install qoarks_cli:
+
+    - After tapping the repository, install qoarks_cli with:
+    ```bash copy
+        brew install qoarks_cli
+    ```
+
+</Steps>
+
+### Updating qoarks_cli
+
+To keep your CLI tool up-to-date with the latest features and security patches, you can easily update it using Homebrew:
+
+```bash copy
+brew update
+brew upgrade qoarks_cli
+```
+
+### Uninstalling qoarks_cli
+
+If you ever need to remove qoarks_cli from your system, you can do so with:
+
+```bash copy
+brew uninstall qoarks_cli
+```

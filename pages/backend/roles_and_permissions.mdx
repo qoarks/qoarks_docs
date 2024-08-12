@@ -1,4 +1,53 @@
-import WorkInProgress from "../../components/wip.tsx"
+# Roles and Permissions: Defining the Behavior of qoarks_cli
 
 
-<WorkInProgress />
+Roles and permissions are the foundation of the authorization system within the Qoarks platform, particularly when using the qoarks_cli to secure your backend services. By carefully defining permissions and associating them with roles, you can precisely control who has access to different parts of your API, ensuring that only authorized users can perform certain actions.
+
+
+
+## Introduction to Permissions
+Permissions in Qoarks are granular controls that define what actions a user can perform on specific API endpoints. These permissions are the building blocks of your security model, allowing you to specify exactly who can do what within your application.
+
+When setting up permissions in the Qoarks dashboard, each permission intended for use with the `qoarks_cli` should include:
+
+- API Resource ID: This is a string that defines the path of the API endpoint. For example, **/api/v1/users/:user_id/posts** is an API Resource ID that targets the posts of a specific user.
+- HTTP Verb: This defines the type of HTTP request (e.g., **GET**, **POST**, **PUT**, **DELETE**) that the permission applies to. For instance, you might have separate permissions for reading posts (**GET**) and creating posts (**POST**).
+
+
+These details enable the qoarks_cli to effectively match incoming requests against the defined permissions and enforce the appropriate security rules.
+
+
+## How qoarks_cli Enforces Permissions
+The qoarks_cli functions as a reverse proxy, intercepting incoming API requests and evaluating them against the permissions and roles you’ve configured. Here’s how it works:
+
+1. **Matching API Requests to Permissions**:
+    - When an API request is received, **qoarks_cli** first attempts to match the request's path and HTTP verb against the permissions defined in the Qoarks dashboard.
+    - If no match is found, the endpoint is treated as **public**, meaning anyone—even non-authenticated users—can access it. The request is passed directly to the server without any further checks.
+
+<br />
+2. **Handling Private Endpoints**:
+    - If a match is found but the matched permission is not associated with any role, the endpoint is treated as **private**. In this case, only authenticated users can access the endpoint, but no specific role checks are performed. If the user is authenticated, the request is forwarded to the server.
+
+<br />
+3. **Role-Based Access Control**:
+    - If the matched permission is associated with a role, **qoarks_cli** performs a role check. The user must have the required role to access the endpoint. If the user has the role, the request proceeds to the server; otherwise, an authorization error is returned.
+
+<br />
+4. **Organization-Level Permissions**:
+    - For endpoints that include an organization ID (e.g., **/api/v1/organizations/:organization_id/projects**), the CLI also checks if the user is part of the specified organization. Even if a user has the necessary role, if they are not a member of the organization indicated in the request, the request is blocked.
+
+
+## Special Cases and Considerations
+- **Dynamic Parameters**: The use of dynamic parameters in API paths (e.g., **:user_id** or **:organization_id**) allows permissions to be highly specific and context-aware. The CLI dynamically evaluates these parameters to enforce the correct access controls.
+- **Flexibility in Role Assignments**: Roles can be tailored to group multiple permissions, making it easier to manage user access across various endpoints. Default roles can be automatically assigned to new users upon registration, simplifying user management.
+
+<br />
+
+# Conclusion
+The integration of roles and permissions within the qoarks_cli is a powerful way to enforce fine-grained access control over your backend services. By defining clear permissions and associating them with roles, you create a robust security framework that ensures users only have access to the resources they are authorized to use. Whether you’re dealing with public endpoints, private data, or organization-specific resources, qoarks_cli provides the tools necessary to protect your application and enforce your security policies efficiently and effectively.
+
+
+
+
+
+
