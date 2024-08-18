@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
@@ -126,19 +127,27 @@ const config: DocsThemeConfig = {
 		</>
 	),
 	project: {
-		link: "https://github.com/qoarks/qoarks_cli_releases",
+		link: "https://github.com/qoarks/qoarks_cli_releases/releases/tag/0.13.0",
 	},
 	editLink: {
-		text: "",
+		text: "Edit this page on GitHub →",
 	},
 	feedback: {
 		content: "Question? Give us feedback →",
 		labels: "feedback",
 	},
-	// chat: {
-	//   link: 'https://discord.com',
-	// },
-	docsRepositoryBase: "https://github.com/qoarks/qoarks_cli_releases",
+	chat: {
+		link: "https://github.com/qoarks/qoarks_docs/issues",
+	},
+	useNextSeoProps() {
+		const { asPath } = useRouter();
+		if (asPath !== "/") {
+			return {
+				titleTemplate: "%s – Qoarks Docs",
+			};
+		}
+	},
+	docsRepositoryBase: "https://github.com/qoarks/qoarks_docs",
 	darkMode: true,
 	primaryHue: 248,
 	primarySaturation: 150,
@@ -147,6 +156,7 @@ const config: DocsThemeConfig = {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta property="og:title" content="Qoarks documentation" />
 			<meta property="og:description" content="Qoarks documentation" />
+			<meta name="description" content="Qoarks documentation" />
 
 			<link rel="icon" type="image/x-icon" href="/logo.svg"></link>
 			<link rel="icon" href="/logo.svg" type="image/svg+xml" />
@@ -164,6 +174,7 @@ const config: DocsThemeConfig = {
 			/>
 		</>
 	),
+
 	banner: {
 		dismissible: true,
 		key: "0.13-release",
