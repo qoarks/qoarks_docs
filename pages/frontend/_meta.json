@@ -3,6 +3,7 @@
 	"q_auth": "<qoarks-auth />",
 	"q_action": "<qoarks-action />",
 	"q_guard": "<qoarks_guard />",
+	"q_email": "<qoarks-email-verify />",
 	"event_handling": "Event Handling",
 	"react": "React",
 	"vue": "Vue",
