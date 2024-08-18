@@ -1,0 +1,51 @@
+# Qoarks Release Notes
+
+## version 0.1.4
+
+#### New Features
+
+**Qoarks Frontend Library:**
+
+- **`<qoarks-auth>`** Component: Simplifies authentication by automatically handling login, registration, password reset, and other utilities based on your dashboard configuration.
+- **`<qoarks-action>`** Component: Provides manual control over login, registration, and logout actions via a simple interface.
+- **`<qoarks-guard>`** Components: Includes `<qoarks-in>` for restricting access to authenticated users and `<qoarks-out>` for content visible to non-authenticated users.
+- **`<qoarks-email-verify>`** Components: Simplifies email verification and sending process
+
+**Qoarks CLI**
+
+- Acts as a reverse proxy for your backend, handling authentication and authorization seamlessly.
+- Supports role-based access control (RBAC) with detailed permission matching, including organization-specific permissions.
+- Simple configuration using a JSON file, with options for port specification, secure communication, and endpoint proxying.
+
+<br />
+#### Improvements
+
+**Enhanced Role and Permission Management:**
+
+- Dashboard updates allow for more detailed permission creation, including API resource ID matching and HTTP verb specification. - New features for organization-level permissions and roles, ensuring precise control over access within multi-organization setups.
+
+**Logging:**
+
+- Expanded logging capabilities, with detailed information on API calls, IP addresses, user agents, and potential bot or VPN detection.
+
+<br />
+
+#### Installation and Integration
+
+**Frontend:**
+
+- Easy installation via npm or yarn, with a straightforward setup process that requires just a few lines of code.
+- Added support for custom styles, manual control, and advanced configuration options for the `<qoarks-auth>` component.
+
+**Backend:**
+
+- Simple CLI installation on Windows, macOS, and Linux, with support for Homebrew on macOS.
+- Detailed configuration options for secure and effective proxying of backend services.
+
+**Event Handling:**
+
+- AUTH_STATE_CHANGE Event: Added event listener for authentication state changes, enabling developers to respond to changes in real-time.
+
+br/>
+
+**_This first public release focuses on making Qoarks easier to integrate, more secure, and more flexible, allowing developers to focus on building their applications without worrying about authentication and authorization complexities._**
